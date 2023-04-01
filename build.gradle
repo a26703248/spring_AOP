@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group 'com.howard'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation 'org.springframework:spring-beans:5.3.18'
+    implementation 'org.springframework:spring-context:5.3.18'
+    implementation 'org.springframework:spring-core:5.3.18'
+    implementation 'org.springframework:spring-webmvc:5.3.18'
+    implementation 'javax.inject:javax.inject:1'
+    implementation 'c3p0:c3p0:0.9.1.2'
+    implementation 'com.mysql:mysql-connector-j:8.0.31'
+    implementation 'org.springframework:spring-aop:5.3.18'
+}
+
+test {
+    useJUnitPlatform()
+}
+tasks.withType(JavaCompile){
+    options.encoding='UTF-8'
+}
