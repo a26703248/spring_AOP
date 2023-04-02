@@ -15,9 +15,10 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * @since JDK 1.8
  * @EnableAspectJAutoProxy 原理
  * 1. 透過 @EnableAspectJAutoProxy 啟動 Aspects 自動代理
- * 2. 透過 @Import(AspectJAutoProxyRegistrar.class) 引入代理註冊器
+ * 2. 透過 @Import(AspectJAutoProxyRegistrar.class) 引入自動代理註冊器
  * 3. 透過 AspectJAutoProxyRegistrar 註冊器註冊自訂 Bean
  * 4. 註冊 InternalAutoProxyCreator=AnnotationAwareAspectJAutoProxyCreator.class
+ * 5. 通過 AnnotationAwareAspectJAutoProxyCreator 將所有 Aspects 註冊製容器中
  */
 @Configuration
 @EnableAspectJAutoProxy // 啟動 Aspects 自動代理
